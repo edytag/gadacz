@@ -5,6 +5,9 @@ require 'yaml'
 
 config = YAML.load(File.read('config.yml'))
 
+get '/favicon.ico' do
+end
+
 get '/:number' do
   number = params[:number].to_i
   string = ""
@@ -13,6 +16,6 @@ get '/:number' do
     number -= 1
   end
 
-  Sayer.say string, config 
+  Sayer.say string, config
 end
 
