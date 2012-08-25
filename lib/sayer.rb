@@ -1,7 +1,7 @@
 class Sayer
 
-  def self.say(string)
-    `echo "#{string}" | festival --tts`
+  def self.say(string, config)
+    `echo "#{string}" | #{config['say_command']}`
   end
 
 end
