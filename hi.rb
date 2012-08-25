@@ -1,4 +1,6 @@
+$LOAD_PATH << './lib'
 require 'sinatra'
+require 'sayer'
 
 get '/:number' do
   number = params[:number].to_i
@@ -8,14 +10,6 @@ get '/:number' do
     number -= 1
   end
 
-
   Sayer.say string 
 end
 
-class Sayer
-
-  def self.say(string)
-    `echo "#{string}" | festival --tts`
-  end
-
-end
